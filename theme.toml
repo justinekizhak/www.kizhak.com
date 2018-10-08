@@ -1,0 +1,22 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Solid State"
+license = "MIT"
+licenselink = "https://gitlab.com/justinekizhak/solid-state/blob/master/LICENSE"
+description = "Solid State - Another free + fully responsive site template by HTML5 UP,
+ported for Hugo"
+homepage = "https://justine.kizhak.com/solid-state.html"
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Justine Kizhakkinedath"
+  homepage = "https://justine.kizhak.com"
+
+# If porting an existing theme
+[original]
+  name = "HTML5 UP"
+  homepage = "https://html5up.net"
+  repo = ""

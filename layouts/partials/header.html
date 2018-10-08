@@ -1,0 +1,11 @@
+<!-- Header -->
+{{ if .IsHome }}
+<header id="header" class="alt">
+    {{ else }}
+    <header id="header">
+{{ end }}
+		<h1><a href="/">{{ .Site.Title }}</a></h1>
+		<nav>
+				<a href="#menu">Menu<i class="fas fa-bars"></i></a>
+		</nav>
+</header>

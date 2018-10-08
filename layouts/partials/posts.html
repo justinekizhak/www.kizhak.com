@@ -1,0 +1,31 @@
+<!-- Four -->
+{{ if eq (mod .Site.Data.index.project_amount 2) 0 }}
+    <section class="wrapper">
+{{ else if eq (mod .Site.Data.index.project_amount 2) 1 }}
+    <section class="wrapper alt">
+{{ end }}
+
+    <div class="inner">
+        <h2 class="major">{{ .Params.section_title }}</h2>
+
+        <p>{{ .Content }}</p>
+        <section class="features">
+
+            {{ range $index, $element := first .Site.Data.index.post_amount (where .Site.RegularPages "Section" "posts") }}
+
+            <article>
+                <a href="#" class="image"><img src="{{ $element.Params.image }}" alt=""></a>
+                <h3 class="major">{{ $element.Title }}</h3>
+                <p>{{ $element.Params.description }}</p>
+                <a href="#" class="special">Learn more</a>
+            </article>
+
+            {{ end }}
+
+        </section>
+        <ul class="actions">
+            <li><a href="projects" class="button">Browse All Projects</a></li>
+            <li><a href="#" class="button">Browse All Posts</a></li>
+        </ul>
+    </div>
+    </section>

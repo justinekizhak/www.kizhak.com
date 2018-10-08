@@ -1,0 +1,16 @@
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollex/0.2.1/jquery.scrollex.js" integrity="sha256-YRrJ9+c/G7B08a+23qVgtEIj8xQd3tSUwkdkaVF9vUc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js" integrity="sha256-3e+NvOq+D/yeJy1qrWpYkEUr6SlOCL5mHpc2nZfX74E=" crossorigin="anonymous"></script>
+
+{{ $main := resources.Get "js/main.js" }}
+
+{{ $util := resources.Get "js/util.js" }}
+
+{{ $jsbundle := slice $main $util | resources.Concat "js/global.js" | minify | fingerprint}}
+
+<script src="{{ $jsbundle.Permalink }}" integrity="{{ $jsbundle.Data.Integrity }}"></script>
+
+{{ "<!--[if lt IE 9]>" | safeHTML }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-sqQlcOZwgKkBRRn5WvShSsuopOdq9c3U+StqgPiFhHQ=" crossorigin="anonymous"></script>
+{{ "<![endif]-->" | safeHTML }}

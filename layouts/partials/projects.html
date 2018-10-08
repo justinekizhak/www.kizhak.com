@@ -1,0 +1,21 @@
+<!-- Projects -->
+
+
+{{ range $index, $element := first .Site.Data.index.project_amount (where .Site.RegularPages "Section" "blog") }}
+
+    {{ if eq (mod $index 2) 0 }}
+        <section class="wrapper spotlight style{{ add $index 1 }}">
+    {{ else if eq (mod $index 2) 1 }}
+        <section class="wrapper alt spotlight style{{ add $index 1 }}">
+    {{ end }}
+            <div class="inner">
+                <a href="#" class="image"><img src="{{ $element.Params.image }}" alt=""></a>
+                <div class="content">
+                    <h2 class="major">{{ $element.Title }}</h2>
+                    <p>{{ $element.Params.description }} </p>
+                    <a href="#" class="special">Learn more</a>
+                </div>
+            </div>
+        </section>
+
+{{ end }}
