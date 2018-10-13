@@ -4,7 +4,7 @@
         <ul class="links">
 
             {{ range .Site.Data.menu_links.links }}
-            <li><a href="{{ .link }}">{{ .name }}</a></li>
+            <li><a href="/{{ .link }}">{{ .name }}</a></li>
             {{ end }}
 
         </ul>

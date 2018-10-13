@@ -1,12 +1,18 @@
-{{ partial "head.html" . }}
-{{ partial "menu.html" . }}
-<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+    {{ partial "head.html" . }}
 
-    {{ partial "header.html" . }}
+    <body>
+        {{ partial "loader.html" . }}
+        <div id="page-wrapper">
+            {{ partial "menu.html" . }}
+            {{- partial "header.html" . -}}
 
+            {{ partial "content.html" . }}
 
-    {{ partial "footer.html" . }}
+            {{- partial "footer.html" . -}}
+        </div>
+        {{- partial "scripts.html" -}}
+    </body>
 
-</div>
-<!-- {{ partial "contact.html" . }} -->
-{{ partial "scripts.html" . }}
+</html>

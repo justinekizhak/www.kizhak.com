@@ -3,7 +3,12 @@
     <div id="particles-js">
     </div>
     <div class="inner">
-        <h2>{{ .Site.Data.index.homepage_title }}</h2>
+        <h2>
+            <span class="txt-rotate" data-period="1000" data-rotate='[
+                         "{{ delimit .Site.Data.index.homepage_title_carousel "\", \n\"" }}"
+                         ]'>
+            </span>
+        </h2>
         <p>{{ .Site.Data.index.homepage_tagline }}</p>
     </div>
 
@@ -11,5 +16,5 @@
 <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-{{ $particles := resources.Get "js/app.js" | minify | fingerprint }}
+{{ $particles := resources.Get "js/particles.js" | minify | fingerprint }}
 <script src="{{ $particles.Permalink }}" integrity="{{ $particles.Data.Integrity }}"></script>
